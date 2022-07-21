@@ -2,7 +2,6 @@
 @chcp 65001
 
 @cls
-@SET "SEP=)" 
 @SET "PER=%%%%" 
 @SET "SITE=http://mirrors.kernel.org/sourceware/cygwin"
 @SET "APP_PATH=%cd%" 
