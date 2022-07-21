@@ -23,7 +23,7 @@
 @echo %BIN%\zsh.exe --login -i>>%APP%\Cygwin-integrated.bat
 @echo Completed %APP%\Cygwin-integrated.bat
 @echo Copping icon Terminal.ico to %APP%
-@copy %SRC%\Terminal.ico %APP%\Terminal.ico >nul
+@copy %SRC%\zsh.ico %APP%\zsh.ico >nul
 @echo Copping utility of process dieZsh to %APP%
 @copy %SRC%\dieZsh.bat %APP%\dieZsh.bat >nul
 @echo Copping alias apt-get debian for apt to %BIN%
@@ -47,13 +47,13 @@
 @echo @cls >> %APP%\Cygwin.bat
 @echo @setlocal enableextensions >> %APP%\Cygwin.bat
 @echo @set TERM= >> %APP%\Cygwin.bat
-@echo @%BIN%\mintty.exe -i /Terminal.ico %BIN%\zsh --login >> %APP%\Cygwin.bat
+@echo @%BIN%\mintty.exe -i /zsh.ico %BIN%\zsh --login >> %APP%\Cygwin.bat
 
 @echo Creating Icon %SHOTCUT_NAME% 
 
 @echo [InternetShortcut] > %SHOTCUT_NAME%
 @echo URL="%APP%\Cygwin.bat" >> %SHOTCUT_NAME%
-@echo IconFile=%APP%\Terminal.ico >> %SHOTCUT_NAME%
+@echo IconFile=%APP%\zsh.ico >> %SHOTCUT_NAME%
 @echo IconIndex=0 >> %SHOTCUT_NAME%
 
 @%SHOTCUT_NAME%
