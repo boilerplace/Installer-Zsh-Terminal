@@ -1,7 +1,7 @@
 @echo off
 @cls
 @SET "PER=%%%%" 
-@SET "SITE=https://linorg.usp.br/cygwin"
+@SET "SITE=http://mirrors.kernel.org/sourceware/cygwin"
 @SET "APP_PATH=%cd%" 
 @SET "SRC=%APP_PATH%\src" 
 @SET "APP=%APP_PATH%\app" 
@@ -33,9 +33,9 @@
 @echo Copping installer Cygwin64 to %APP%
 @copy %SRC%\setup-x86_64.exe %BIN%\setup-x86_64.exe >nul
 @echo Download the dependencies zsh,bash,wget,git,chere to %APP%
-@%BIN%\setup-x86_64.exe -q --no-admin -n -N -l %TMP% -R %APP% -s %SITE%% -P zsh,bash,wget,git,chere >nul
-@echo Copping the home to %APP%
-@XCOPY %SRC%\home\*.* %APP%\home\*.* /E /Y
+@%BIN%\setup-x86_64.exe -q --no-admin -n -N -l %TMP% -R %APP% -s %SITE%% -P zsh,bash,wget,lynx,git,chere >nul
+@echo Extracting the home/root to %APP%
+@%SRC%\unrar x -v %SRC%\home\root.part01.rar %APP%\home\
 @echo Call icon Cygwin64 Terminal to open Zsh shell
 @echo.
 
@@ -47,7 +47,7 @@
 @echo @cls >> %APP%\Cygwin.bat
 @echo @setlocal enableextensions >> %APP%\Cygwin.bat
 @echo @set TERM= >> %APP%\Cygwin.bat
-@echo @%BIN%\mintty.exe %BIN%\zsh --login -i >> %APP%\Cygwin.bat
+@echo @%BIN%\mintty.exe -i /Terminal.ico %BIN%\zsh --login >> %APP%\Cygwin.bat
 
 @echo Creating Icon %SHOTCUT_NAME% 
 
